@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Site Exemplo Completo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      background-color: #f0f0f0;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .hero button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .content {
+      display: flex;
+      justify-content: space-around;
+      padding: 20px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #ddd;
+      padding: 20px;
+      width: 30%;
+      border-radius: 10px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+    }
+
+    .social-icons {
+      margin-top: 10px;
+    }
+
+    .social-icons span {
+      margin: 0 10px;
+      background-color: #555;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: inline-block;
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <h1>Meu Site</h1>
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Serviços</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>Bem-vindo ao site!</h1>
+    <p>Este é um site simples com estrutura básica.</p>
+    <button>Saiba Mais</button>
+  </div>
+
+  <div class="content">
+    <div class="card">
+        <h1>Seção 1</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit, in error placeat perferendis ipsa blanditiis reiciendis, quibusdam perspiciatis, voluptas incidunt deleniti maxime exercitationem ipsam officia. Consequuntur sit nobis voluptatem officiis?</p>
+    </div>
+    <div class="card">
+        <h1>Seção 2</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit, in error placeat perferendis ipsa blanditiis reiciendis, quibusdam perspiciatis, voluptas incidunt deleniti maxime exercitationem ipsam officia. Consequuntur sit nobis voluptatem officiis?</p>
+    </div>
+    <div class="card">
+        <h1>Seção 3</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit, in error placeat perferendis ipsa blanditiis reiciendis, quibusdam perspiciatis, voluptas incidunt deleniti maxime exercitationem ipsam officia. Consequuntur sit nobis voluptatem officiis?</p>
+    </div>    
+  </div>
+
+  <footer style="position: absolute; bottom: 0; width: 100vw;">
+    <p>Rodapé do site</p>
+    <div class="social-icons">
+      <span>FB</span>
+      <span>IG</span>
+      <span>TW</span>
+    </div>
+  </footer>
+
+</body>
+</html>
