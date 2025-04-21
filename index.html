@@ -74,18 +74,21 @@
       color: white;
       text-align: center;
       padding: 20px 10px;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
     }
 
-    .social-icons {
-      margin-top: 10px;
+    .form-container {
+      margin-top: 20px;
+      text-align: center;
     }
 
-    .social-icons span {
-      margin: 0 10px;
-      background-color: #555;
-      padding: 5px 10px;
+    .form-container input, .form-container button {
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
       border-radius: 5px;
-      display: inline-block;
     }
 
     @media (max-width: 768px) {
@@ -94,6 +97,37 @@
       }
     }
   </style>
+  <script>
+    async function EnvioEmail(event){
+      event.preventDefault();  // Impede o comportamento padrão do formulário
+
+      const form = document.getElementById("contactForm");
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch("https://formsubmit.co/ajax/gabrielalmeidasici@gmail.com", {
+          method: "POST",
+          headers: { "Accept": "application/json" },
+          body: formData
+        });
+
+        if (response.ok) {
+          alert("Mensagem enviada com sucesso!");
+          form.reset();  // Limpa o formulário após o envio
+        } else {
+          alert("Erro ao enviar. Tente novamente.");
+        }
+      } catch (error) {
+        alert("Erro na conexão. Verifique sua internet.");
+      }
+    }
+
+    function trocarCorBotao() {
+      const button = document.getElementById("colorButton");
+      button.style.backgroundColor = "#FF5733";  // Nova cor (laranja)
+      button.style.color = "#fff";  // Cor do texto
+    }
+  </script>
 </head>
 <body>
 
@@ -112,25 +146,19 @@
   <div class="hero">
     <h1>Bem-vindo ao site!</h1>
     <p>Este é um site simples com estrutura básica.</p>
-    <button>Saiba Mais</button>
+    <button id="colorButton" onclick="trocarCorBotao()">Clique para mudar a cor</button>
   </div>
 
-  <div class="content">
-    <div class="card">
-        <h1>Seção 1</h1>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit, in error placeat perferendis ipsa blanditiis reiciendis, quibusdam perspiciatis, voluptas incidunt deleniti maxime exercitationem ipsam officia. Consequuntur sit nobis voluptatem officiis?</p>
-    </div>
-    <div class="card">
-        <h1>Seção 2</h1>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit, in error placeat perferendis ipsa blanditiis reiciendis, quibusdam perspiciatis, voluptas incidunt deleniti maxime exercitationem ipsam officia. Consequuntur sit nobis voluptatem officiis?</p>
-    </div>
-    <div class="card">
-        <h1>Seção 3</h1>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit, in error placeat perferendis ipsa blanditiis reiciendis, quibusdam perspiciatis, voluptas incidunt deleniti maxime exercitationem ipsam officia. Consequuntur sit nobis voluptatem officiis?</p>
-    </div>    
+  <div class="form-container">
+    <h2>Envie seu contato!</h2>
+    <form id="contactForm" onsubmit="EnvioEmail(event)">
+      <input type="text" id="name" name="name" placeholder="Seu Nome" required>
+      <input type="email" id="email" name="email" placeholder="Seu E-mail" required>
+      <button type="submit">Enviar E-mail</button>
+    </form>
   </div>
 
-  <footer style="position: absolute; bottom: 0; width: 100vw;">
+  <footer>
     <p>Rodapé do site</p>
     <div class="social-icons">
       <span>FB</span>
